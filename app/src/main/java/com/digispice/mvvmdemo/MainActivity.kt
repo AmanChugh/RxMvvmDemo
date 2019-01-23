@@ -17,9 +17,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         AndroidInjection.inject(this)
+        setContentView(R.layout.activity_main)
+
         cryptocurrenciesViewModel = ViewModelProviders.of(this, cryptocurrenciesViewModelFactory).get(
             CryptocurrenciesViewModel::class.java
         )
